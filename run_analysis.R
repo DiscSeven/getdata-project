@@ -45,4 +45,4 @@ data <- cbind(X_data, y_data, subject_data)
 library(plyr)
 tidy_data <- ddply(data, .(subject, activity), function(x) colMeans(x[, 1:feature_length]))
 
-write.table(averages_data, "averages_data.txt", row.name=FALSE)
+write.table(tidy_data, "tidy_data.txt", row.name=FALSE)
